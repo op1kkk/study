@@ -41,16 +41,34 @@ class ViewController: UIViewController {
                                                   object: nil)
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let checkResult = checkUserData()
+        if !checkResult {
+            showLoginError()
+        }
+        return checkResult
+    }
+    
+    func checkUserData() -> Bool {
+        guard let login = nameInput.text,
+            let password = passwordInput.text else {return false}
+            
+            if login == "admin" && password == "1234" {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+    func showLoginError() {
+        let alert = UIAlertController(title: "Error", message: "Wrong name or password", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        }
+
     // MARK: - Actions
     @IBAction func loginButton(_ sender: Any) {
-        let name = nameInput.text!
-        let password = passwordInput.text!
-        
-        if name == "admin" && password == "admin" {
-            print("Success")
-        } else {
-            print("Incorrect login or password")
-        }
     }
     
     @objc func hideKeyboard() {
@@ -70,4 +88,5 @@ class ViewController: UIViewController {
         scrollView.contentInset = contentInset
     }
 }
+
 
