@@ -1,13 +1,13 @@
 //
-//  TableViewCell.swift
+//  GroupCell.swift
 //  Vk
 //
-//  Created by Александр Чигрин on 28.11.2021.
+//  Created by Александр Чигрин on 03.12.2021.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class GroupCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
