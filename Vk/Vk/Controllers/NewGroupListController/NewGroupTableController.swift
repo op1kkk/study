@@ -1,5 +1,5 @@
 //
-//  GroupTableController.swift
+//  NewGroupTableController.swift
 //  Vk
 //
 //  Created by Александр Чигрин on 03.12.2021.
@@ -7,39 +7,31 @@
 
 import UIKit
 
-class GroupTableController: UITableViewController {
+class NewGroupTableController: UITableViewController {
+    
+    var groups: [GroupModel] =
+    [GroupModel(avatar: "ng1", name: "Best Films"),
+    GroupModel(avatar: "ng2", name: "Shaved legs"),
+    GroupModel(avatar: "ng3", name: "Barber Shop")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return groups.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NGCell", for: indexPath) as? NewGroupCell
+        else {
+        return UITableViewCell()
+    }
+        cell.configure(model: groups[indexPath.row])
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

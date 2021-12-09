@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct UserModel {
+    
+    let avatar: String
+    let name: String
+    let surname: String
+    
+}

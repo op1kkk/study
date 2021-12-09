@@ -7,6 +7,7 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class FriendsColCell: UICollectionViewCell {
     
+    @IBOutlet weak var icon: UIImageView!
 }

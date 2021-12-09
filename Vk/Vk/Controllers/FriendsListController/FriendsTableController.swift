@@ -8,27 +8,67 @@
 import UIKit
 
 class FriendsTableController: UITableViewController {
+    
+    
 
+    var friends = FriendsLoader.iNeedFriends()
+    var lettersOfNames = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.showsVerticalScrollIndicator = false
+        loadLetters()
+    }
+    
+    func loadLetters() {
+        for user in friends {
+            lettersOfNames.append(String(user.key))
+        }
     }
 
     // MARK: - Table view data source
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        friends.count
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return friends[section].data.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = friends[section]
+        
+        return String(section.key)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? FriendsCell else {
             return UITableViewCell()
         }
-        cell.friendName.text = "Julia Nasty"
-
-        // Configure the cell...
-
+        let section = friends[indexPath.section]
+        let name = section.data[indexPath.row].name + " " + section.data[indexPath.row].surname
+        let image = section.data[indexPath.row].avatar
+        
+        cell .configure(name: name, image: UIImage(named: image)!)
+        
         return cell
     }
+
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return lettersOfNames
+    }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView()
+        header.backgroundColor = .gray
+        
+        let letter = UILabel(frame: CGRect(x: 30, y: 5, width: 20, height: 20))
+        letter.textColor = .white
+        letter.text = lettersOfNames[section]
+        letter.font = UIFont.systemFont(ofSize: 14)
+        header.addSubview(letter)
+        return header
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct PhotoModel {
+    
+    let avatar: String
+    
+}
