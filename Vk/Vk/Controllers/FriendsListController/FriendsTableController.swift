@@ -9,8 +9,6 @@ import UIKit
 
 class FriendsTableController: UITableViewController {
     
-    
-
     var friends = FriendsLoader.iNeedFriends()
     var lettersOfNames = [String]()
     

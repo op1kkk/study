@@ -14,7 +14,6 @@ class FriendsLoader {
      UserModel(avatar: "f4", name: "Dmitriy", surname: "Yarosh"),
      UserModel(avatar: "f5", name: "Julia", surname: "Kanchikova")]
     
-    
     static func iNeedFriends() -> [FriendsSection] {
         let sortedArray = sortFriends(array: user)
         let sectionsArray = formFriendsSection(array: sortedArray)

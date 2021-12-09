@@ -13,7 +13,6 @@ class FriendsCollectionController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     /*
@@ -38,7 +37,6 @@ class FriendsCollectionController: UICollectionViewController {
             }
       
         // Configure the cell
-    
         return cell
     }
 
