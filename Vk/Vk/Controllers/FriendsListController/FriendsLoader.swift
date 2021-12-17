@@ -12,7 +12,8 @@ class FriendsLoader {
      UserModel(avatar: "f2", name: "Andrew", surname: "Chumachenko"),
      UserModel(avatar: "f3", name: "Lola", surname: "Dola"),
      UserModel(avatar: "f4", name: "Dmitriy", surname: "Yarosh"),
-     UserModel(avatar: "f5", name: "Julia", surname: "Kanchikova")]
+     UserModel(avatar: "f5", name: "Julia", surname: "Kanchikova"),
+     UserModel(avatar: "f6", name: "Aleksey", surname: "Demchenko")]
     
     static func iNeedFriends() -> [FriendsSection] {
         let sortedArray = sortFriends(array: user)
@@ -49,3 +50,6 @@ class FriendsLoader {
         return sectionArray
     }
 }
+
+
+

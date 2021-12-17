@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860388E3276CA51A00204C39 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860388E2276CA51A00204C39 /* NewsTableViewCell.xib */; };
+		860388E5276CA72600204C39 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860388E4276CA72600204C39 /* NewsTableViewController.swift */; };
+		860388E7276CA74400204C39 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860388E6276CA74400204C39 /* NewsTableViewCell.swift */; };
 		86315B72276275BA0016C6C9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86315B71276275BA0016C6C9 /* TestView.swift */; };
 		86315B7427627D520016C6C9 /* FriendsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86315B7327627D520016C6C9 /* FriendsLoader.swift */; };
 		86315B7627627EDA0016C6C9 /* FriendsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86315B7527627EDA0016C6C9 /* FriendsSection.swift */; };
@@ -20,6 +23,8 @@
 		86355BB3274D5AB70097F43F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86355BB1274D5AB70097F43F /* Main.storyboard */; };
 		86355BB5274D5AB70097F43F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86355BB4274D5AB70097F43F /* Assets.xcassets */; };
 		86355BB8274D5AB70097F43F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86355BB6274D5AB70097F43F /* LaunchScreen.storyboard */; };
+		86392A7D276B2B7800FF5B35 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86392A7C276B2B7800FF5B35 /* CustomCell.xib */; };
+		86392A80276B2BC500FF5B35 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86392A7F276B2BC500FF5B35 /* CustomTableViewCell.swift */; };
 		863E95AB275A101900D323A6 /* GroupTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E95AA275A101900D323A6 /* GroupTableController.swift */; };
 		863E95AD275A104700D323A6 /* NewGroupTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E95AC275A104700D323A6 /* NewGroupTableController.swift */; };
 		863E95B0275A10C900D323A6 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E95AF275A10C900D323A6 /* GroupCell.swift */; };
@@ -32,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		860388E2276CA51A00204C39 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		860388E4276CA72600204C39 /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		860388E6276CA74400204C39 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		86315B71276275BA0016C6C9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		86315B7327627D520016C6C9 /* FriendsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsLoader.swift; sourceTree = "<group>"; };
 		86315B7527627EDA0016C6C9 /* FriendsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSection.swift; sourceTree = "<group>"; };
@@ -47,6 +55,8 @@
 		86355BB4274D5AB70097F43F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86355BB7274D5AB70097F43F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86355BB9274D5AB70097F43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86392A7C276B2B7800FF5B35 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		86392A7F276B2BC500FF5B35 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		863E95AA275A101900D323A6 /* GroupTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableController.swift; sourceTree = "<group>"; };
 		863E95AC275A104700D323A6 /* NewGroupTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupTableController.swift; sourceTree = "<group>"; };
 		863E95AF275A10C900D323A6 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
@@ -69,6 +79,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		860388E1276CA4C500204C39 /* NewsController */ = {
+			isa = PBXGroup;
+			children = (
+				860388E2276CA51A00204C39 /* NewsTableViewCell.xib */,
+				860388E4276CA72600204C39 /* NewsTableViewController.swift */,
+				860388E6276CA74400204C39 /* NewsTableViewCell.swift */,
+			);
+			path = NewsController;
+			sourceTree = "<group>";
+		};
 		8608B6902759010A0077291B /* FriendsPhotoController */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +101,7 @@
 		86315B70276275980016C6C9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				860388E1276CA4C500204C39 /* NewsController */,
 				8661D052275796E800B136E8 /* LoginController */,
 				8661D05327579D8100B136E8 /* FriendsListController */,
 				8608B6902759010A0077291B /* FriendsPhotoController */,
@@ -124,11 +145,21 @@
 			path = Vk;
 			sourceTree = "<group>";
 		};
+		86392A7E276B2BAB00FF5B35 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				86392A7C276B2B7800FF5B35 /* CustomCell.xib */,
+				86392A7F276B2BC500FF5B35 /* CustomTableViewCell.swift */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		863E95AE275A105000D323A6 /* GroupListController */ = {
 			isa = PBXGroup;
 			children = (
 				863E95AA275A101900D323A6 /* GroupTableController.swift */,
 				863E95AF275A10C900D323A6 /* GroupCell.swift */,
+				86392A7E276B2BAB00FF5B35 /* CustomCell */,
 			);
 			path = GroupListController;
 			sourceTree = "<group>";
@@ -232,7 +263,9 @@
 			files = (
 				86355BB8274D5AB70097F43F /* LaunchScreen.storyboard in Resources */,
 				86355BB5274D5AB70097F43F /* Assets.xcassets in Resources */,
+				86392A7D276B2B7800FF5B35 /* CustomCell.xib in Resources */,
 				86355BB3274D5AB70097F43F /* Main.storyboard in Resources */,
+				860388E3276CA51A00204C39 /* NewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,11 +281,14 @@
 				863E95AD275A104700D323A6 /* NewGroupTableController.swift in Sources */,
 				863244952753BFFD0011C4CA /* FriendsCollectionController.swift in Sources */,
 				863244932753BFE20011C4CA /* FriendsCell.swift in Sources */,
+				860388E5276CA72600204C39 /* NewsTableViewController.swift in Sources */,
 				86355BB0274D5AB70097F43F /* LoginController.swift in Sources */,
+				86392A80276B2BC500FF5B35 /* CustomTableViewCell.swift in Sources */,
 				86315B7627627EDA0016C6C9 /* FriendsSection.swift in Sources */,
 				863244972753C00C0011C4CA /* FriendsColCell.swift in Sources */,
 				863E95B0275A10C900D323A6 /* GroupCell.swift in Sources */,
 				86315B72276275BA0016C6C9 /* TestView.swift in Sources */,
+				860388E7276CA74400204C39 /* NewsTableViewCell.swift in Sources */,
 				86355BAC274D5AB70097F43F /* AppDelegate.swift in Sources */,
 				868456912762890900A71A12 /* LikeControl.swift in Sources */,
 				863E95B2275A10E100D323A6 /* NewGroupCell.swift in Sources */,
@@ -411,7 +447,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7829ZCG5UN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vk/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -442,7 +478,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7829ZCG5UN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vk/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
