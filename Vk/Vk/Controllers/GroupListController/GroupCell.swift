@@ -11,9 +11,9 @@ class GroupCell: UITableViewCell {
 
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var groupAvatar: UIImageView!
-    
-    func configure(model: GroupModel) {
-        groupName.text = model.name
-        groupAvatar.image = UIImage(named: model.avatar)
+
+    func configure (model: GroupModel) {
+    groupName.text = model.name
+    groupAvatar.image = UIImage(named: model.avatar)
     }
 }

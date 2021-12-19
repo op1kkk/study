@@ -9,17 +9,39 @@ import UIKit
 
 class GroupTableController: UITableViewController {
     
-    var groups: [GroupModel] =
+    @IBOutlet weak var searchGroup: UISearchBar!
+    
+    private var groups: [GroupModel] =
     [GroupModel(avatar: "g1", name: "Cats & Dogs"),
     GroupModel(avatar: "g2", name: "Best dance music"),
     GroupModel(avatar: "g3", name: "Iphones")]
-
+    
+    private var filteredGroups = [GroupModel]()
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // setup search controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredGroups.count
+        }
         return groups.count
     }
 
@@ -27,7 +49,18 @@ class GroupTableController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GCell", for: indexPath) as? GroupCell else {
             return UITableViewCell()
         }
-        cell.configure(model: groups[indexPath.row])
+        
+        var group: GroupModel
+        
+        if isFiltering {
+            group = filteredGroups[indexPath.row]
+        } else {
+            group = groups[indexPath.row]
+        }
+        
+        cell.groupName.text = group.name
+        cell.groupAvatar.image = UIImage(named: group.avatar)
+        
         return cell
     }
     
@@ -86,4 +119,19 @@ class GroupTableController: UITableViewController {
     }
     */
 
+}
+
+extension GroupTableController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        
+        filteredGroups = groups.filter({ (group: GroupModel) -> Bool in
+            return group.name.lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
+    }
 }
