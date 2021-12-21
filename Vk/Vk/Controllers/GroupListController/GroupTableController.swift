@@ -9,6 +9,7 @@ import UIKit
 
 class GroupTableController: UITableViewController {
     
+   
     @IBOutlet weak var searchGroup: UISearchBar!
     
     private var groups: [GroupModel] =
@@ -35,6 +36,10 @@ class GroupTableController: UITableViewController {
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+
+//        let tapOnGroup = UITapGestureRecognizer(target: groupLabel, action: #selector(GroupTableController.runAnimate()))
+//        tableView.addGestureRecognizer(tapOnGroup)
     }
 
     // MARK: - Table view data source
@@ -118,6 +123,25 @@ class GroupTableController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Animation
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5) {
+                    if let cell = tableView.cellForRow(at: indexPath) as? GroupCell {
+                        cell.groupAvatar.transform = .init(scaleX: 0.66, y: 0.66)
+                        cell.contentView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+                    }
+                }
+    }
+    
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5) {
+            if let cell = tableView.cellForRow(at: indexPath) as? GroupCell {
+                cell.groupAvatar.transform = .identity
+                cell.contentView.backgroundColor = .clear
+            }
+        }
+    }
 
 }
 

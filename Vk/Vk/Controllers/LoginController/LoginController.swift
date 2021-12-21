@@ -9,15 +9,24 @@ import UIKit
 
 class LoginController: UIViewController {
     
+    @IBOutlet weak var vkLabel: UILabel!
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pointOne: UILabel!
+    @IBOutlet weak var pointTwo: UILabel!
+    @IBOutlet weak var pointThree: UILabel!
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        settingLoad()
+        loadingPoints()
+        
         let hideKeyBoardGesture = UITapGestureRecognizer(target: self,action: #selector(hideKeyboard))
         scrollView.addGestureRecognizer(hideKeyBoardGesture)
+        //runAnimate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +78,11 @@ class LoginController: UIViewController {
 
     // MARK: - Actions
     @IBAction func loginButton(_ sender: Any) {
+        //loadingPoints()
+//        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
+//                    self.performSegue(withIdentifier: "Login", sender: self)
+//                }
+        
     }
     
     @objc func hideKeyboard() {
@@ -89,4 +103,44 @@ class LoginController: UIViewController {
     }
 }
 
+//extension LoginController {
+//    func runAnimate() {
+//        UIView.animate(withDuration: 0.2, delay: 0, options: [.repeat, .autoreverse], animations: {
+//            self.vkLabel.frame.origin.y -= 100
+//        })
+//    }
+//}
 
+extension LoginController {
+    func loadingPoints() {
+        UIView.animate(withDuration: 0.5, delay: 0.2, options: [.autoreverse, .repeat]) {
+            self.pointOne.alpha = 1
+        } completion: { success in
+            
+        }
+        
+        UIView.animate(withDuration: 0.5, delay: 0.3, options: [.autoreverse, .repeat]) {
+            self.pointTwo.alpha = 1
+        } completion: { success in
+            
+        }
+        
+        UIView.animate(withDuration: 0.5, delay: 0.4, options: [.autoreverse, .repeat]) {
+            self.pointThree.alpha = 1
+        } completion: { success in
+            
+        }
+    }
+    
+    func settingLoad() {
+        pointOne.layer.masksToBounds = true
+        pointOne.layer.cornerRadius = 15
+        pointOne.alpha = 0
+        pointTwo.layer.masksToBounds = true
+        pointTwo.layer.cornerRadius = 15
+        pointTwo.alpha = 0
+        pointThree.layer.masksToBounds = true
+        pointThree.layer.cornerRadius = 15
+        pointThree.alpha = 0
+    }
+}

@@ -76,6 +76,26 @@ class FriendsTableController: UITableViewController {
 			vc.friend = section.data[indexPathRow]
 		}
 	}
+    
+    // MARK: Animation
+    
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5) {
+                    if let cell = tableView.cellForRow(at: indexPath) as? FriendsCell {
+                        cell.friendAvatar.transform = .init(scaleX: 0.5, y: 0.5)
+                        cell.contentView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+                    }
+                }
+    }
+    
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5) {
+            if let cell = tableView.cellForRow(at: indexPath) as? FriendsCell {
+                cell.friendAvatar.transform = .identity
+                cell.contentView.backgroundColor = .clear
+            }
+        }
+    }
 }
 
 private extension FriendsTableController {
