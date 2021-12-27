@@ -51,6 +51,9 @@ class LoginController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        DispatchQueue.main.asyncAfter(deadline:.now() + 5.0, execute: {
+           self.performSegue(withIdentifier: "log",sender: self)
+        })
         let checkResult = checkUserData()
         if !checkResult {
             showLoginError()
@@ -63,6 +66,7 @@ class LoginController: UIViewController {
             let password = passwordInput.text else {return false}
             
             if login == "admin" && password == "1234" {
+                loadingPoints()
                 return true
             } else {
                 return false
@@ -75,13 +79,9 @@ class LoginController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
         }
-
+    
     // MARK: - Actions
     @IBAction func loginButton(_ sender: Any) {
-        //loadingPoints()
-//        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
-//                    self.performSegue(withIdentifier: "Login", sender: self)
-//                }
         
     }
     

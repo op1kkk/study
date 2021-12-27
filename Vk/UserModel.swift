@@ -6,11 +6,27 @@
 //
 
 import Foundation
+import UIKit
 
 struct UserModel {
     
-    let avatar: String
     let name: String
     let surname: String
+    let avatar: String
+    let uiAvatar: UIImage
+    var storedImages: [UIImage] = []
     
+    init(name: String, surname: String, avatar: String, storedImages: [String]) {
+        self.name = name
+        self.surname = surname
+        self.avatar = avatar
+        
+        uiAvatar = UIImage(named: avatar) ?? UIImage()
+        
+        // массив фото юзера из имен фото
+        for storedImage in storedImages {
+            guard let avatar = UIImage(named: storedImage) else { continue }
+            self.storedImages.append(avatar)
+        }
+    }
 }

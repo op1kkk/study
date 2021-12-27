@@ -39,6 +39,8 @@ class LikeControl: UIControl {
         likesImageFill.frame = CGRect(x: 5, y: 1, width: 22, height: 18)
         likesImageFill.image = imageFill
         likesImageFill.tintColor = .red
+        
+        
 
         // Настраиваем лейбл
         likesLable.frame = CGRect(x: self.frame.size.width - 20, y: 4, width: 10, height: 12)
@@ -52,6 +54,17 @@ class LikeControl: UIControl {
         bgView.addSubview(likesImageEmpty)
         bgView.addSubview(likesLable)
         self.addSubview(bgView)
+    }
+    
+    func taskAnimation() {
+        let animation = CASpringAnimation(keyPath: "position.x")
+        animation.fromValue = bgView.layer.position.x - 60
+        animation.toValue = bgView.layer.position.x
+        animation.duration = 1.5
+        animation.timingFunction = .init(name: .easeInEaseOut)
+        animation.mass = 2
+        animation.stiffness = 200
+        bgView.layer.add(animation, forKey: nil)
     }
 
     // Создадим метод который меняет кол-во лайков
@@ -76,6 +89,7 @@ class LikeControl: UIControl {
         }
 
         likesLable.text = String(likesCount)
+        taskAnimation()
     }
 
     override init(frame: CGRect) {

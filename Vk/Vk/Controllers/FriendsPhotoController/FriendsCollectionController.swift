@@ -17,6 +17,9 @@ class FriendsCollectionController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDataSource
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
@@ -30,5 +33,16 @@ class FriendsCollectionController: UICollectionViewController {
 		cell.icon.image = UIImage(named: friend?.avatar ?? "") ?? UIImage()
       
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier:
+                                                            "SwipeViewController") as? SwipeViewController else { return }
+
+        if let images = friend?.storedImages {
+        vc.photos = images
+        }
+        vc.selectedPhoto = indexPath.item
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -8,12 +8,12 @@
 class FriendsLoader {
     
     static var user =
-    [UserModel(avatar: "f1", name: "Kostya", surname: "Vlasov"),
-     UserModel(avatar: "f2", name: "Andrew", surname: "Chumachenko"),
-     UserModel(avatar: "f3", name: "Lola", surname: "Dola"),
-     UserModel(avatar: "f4", name: "Dmitriy", surname: "Yarosh"),
-     UserModel(avatar: "f5", name: "Julia", surname: "Kanchikova"),
-     UserModel(avatar: "f6", name: "Aleksey", surname: "Demchenko")]
+    [UserModel(name: "Kostya", surname: "Vlasov", avatar: "f1", storedImages: ["st1", "st2", "st3", "st4"]),
+     UserModel(name: "Andrew", surname: "Chumachenko", avatar: "f2", storedImages: ["st1", "st2", "st3", "st4"]),
+     UserModel(name: "Lola", surname: "Dola", avatar: "f3", storedImages: ["st1", "st2", "st3", "st4"]),
+     UserModel(name: "Dmitriy", surname: "Yarosh", avatar: "f4", storedImages: ["st1", "st2", "st3", "st4"]),
+     UserModel(name: "Julia", surname: "Kanchikova", avatar: "f5", storedImages: ["st1", "st2", "st3", "st4"]),
+     UserModel(name: "Aleksey", surname: "Demchenko", avatar: "f6", storedImages: ["st1", "st2", "st3", "st4"])]
     
     static func iNeedFriends() -> [FriendsSection] {
         let sortedArray = sortFriends(array: user)
