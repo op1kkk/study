@@ -23,6 +23,7 @@
 		86355BB3274D5AB70097F43F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86355BB1274D5AB70097F43F /* Main.storyboard */; };
 		86355BB5274D5AB70097F43F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86355BB4274D5AB70097F43F /* Assets.xcassets */; };
 		86355BB8274D5AB70097F43F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86355BB6274D5AB70097F43F /* LaunchScreen.storyboard */; };
+		8637AE16277C76390030726B /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8637AE15277C76390030726B /* Session.swift */; };
 		86392A7D276B2B7800FF5B35 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86392A7C276B2B7800FF5B35 /* CustomCell.xib */; };
 		86392A80276B2BC500FF5B35 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86392A7F276B2BC500FF5B35 /* CustomTableViewCell.swift */; };
 		863E7B0F2778895E00E59E9F /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863E7B0E2778895E00E59E9F /* SwipeViewController.swift */; };
@@ -56,6 +57,7 @@
 		86355BB4274D5AB70097F43F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86355BB7274D5AB70097F43F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86355BB9274D5AB70097F43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8637AE15277C76390030726B /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		86392A7C276B2B7800FF5B35 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		86392A7F276B2BC500FF5B35 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		863E7B0E2778895E00E59E9F /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		86355BAA274D5AB70097F43F /* Vk */ = {
 			isa = PBXGroup;
 			children = (
+				8637AE15277C76390030726B /* Session.swift */,
 				863E95B8275A2A7600D323A6 /* Model */,
 				86315B70276275980016C6C9 /* Controllers */,
 				86355BAB274D5AB70097F43F /* AppDelegate.swift */,
@@ -307,6 +310,7 @@
 				863E7B0F2778895E00E59E9F /* SwipeViewController.swift in Sources */,
 				863E95B7275A2A6C00D323A6 /* GroupModel.swift in Sources */,
 				86E82FB8275BA82500BD7587 /* photoModel.swift in Sources */,
+				8637AE16277C76390030726B /* Session.swift in Sources */,
 				863E95AB275A101900D323A6 /* GroupTableController.swift in Sources */,
 				863E95B5275A2A5F00D323A6 /* UserModel.swift in Sources */,
 				863244912753BEFE0011C4CA /* FriendsTableController.swift in Sources */,
