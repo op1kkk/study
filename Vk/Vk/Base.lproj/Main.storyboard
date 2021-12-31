@@ -405,7 +405,7 @@
         <!--FriendsNav-->
         <scene sceneID="Tse-d3-aC6">
             <objects>
-                <navigationController title="FriendsNav" automaticallyAdjustsScrollViewInsets="NO" id="yMa-gn-b7H" sceneMemberID="viewController">
+                <navigationController title="FriendsNav" automaticallyAdjustsScrollViewInsets="NO" id="yMa-gn-b7H" customClass="CustomNavigationController" customModule="Vk" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="person.fill" catalog="system" id="RNK-en-0GX"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="o8b-G5-YUk"/>
@@ -519,10 +519,77 @@
             </objects>
             <point key="canvasLocation" x="2856.521739130435" y="1157.8125"/>
         </scene>
+        <!--One Controller-->
+        <scene sceneID="Png-o5-Q6r">
+            <objects>
+                <viewController id="yno-8Y-GnF" customClass="OneController" customModule="Vk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hd6-VS-aah">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLQ-Ap-gFM">
+                                <rect key="frame" x="132" y="378" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="XUS-FP-1vr"/>
+                                    <constraint firstAttribute="height" constant="150" id="Yva-nB-U3M"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="woj-Bl-Ja6" kind="show" id="b9Y-t7-VyB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oyB-hI-wd6"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="pLQ-Ap-gFM" firstAttribute="centerX" secondItem="oyB-hI-wd6" secondAttribute="centerX" id="Huw-TB-9gN"/>
+                            <constraint firstItem="pLQ-Ap-gFM" firstAttribute="centerY" secondItem="oyB-hI-wd6" secondAttribute="centerY" id="TQv-c6-wVN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l11-1o-Qst" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1996" y="2044"/>
+        </scene>
+        <!--Second Controller-->
+        <scene sceneID="Y9V-eO-7dF">
+            <objects>
+                <viewController id="woj-Bl-Ja6" customClass="SecondController" customModule="Vk" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i7f-a5-acg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWo-Io-1DH">
+                                <rect key="frame" x="132" y="329" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="GIh-M9-Djd"/>
+                                    <constraint firstAttribute="width" constant="150" id="aUy-Uo-xYy"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="woj-Bl-Ja6" eventType="touchUpInside" id="5ls-hv-RPy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kz4-HU-kag"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="TWo-Io-1DH" firstAttribute="centerY" secondItem="Kz4-HU-kag" secondAttribute="centerY" id="MF4-3p-Tap"/>
+                            <constraint firstItem="TWo-Io-1DH" firstAttribute="centerX" secondItem="Kz4-HU-kag" secondAttribute="centerX" id="dUy-V4-HeS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LIY-eH-qKM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEQ-hA-KTd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2857" y="2044"/>
+        </scene>
         <!--News-->
         <scene sceneID="tqm-cd-hok">
             <objects>
-                <navigationController id="uTv-Pe-bn6" sceneMemberID="viewController">
+                <navigationController id="uTv-Pe-bn6" customClass="CustomNavigationController" customModule="Vk" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="PZs-fK-Ga6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XC7-dl-X5Z">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -539,7 +606,7 @@
         <!--GroupNav-->
         <scene sceneID="UfL-zH-NhA">
             <objects>
-                <navigationController title="GroupNav" automaticallyAdjustsScrollViewInsets="NO" id="eEe-j8-5jf" sceneMemberID="viewController">
+                <navigationController title="GroupNav" automaticallyAdjustsScrollViewInsets="NO" id="eEe-j8-5jf" customClass="CustomNavigationController" customModule="Vk" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Groups" image="person.2.fill" catalog="system" id="l9z-w9-sye"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kfM-G0-bHV"/>
@@ -572,8 +639,14 @@
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

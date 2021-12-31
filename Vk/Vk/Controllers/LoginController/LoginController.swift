@@ -22,10 +22,11 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         settingLoad()
-        loadingPoints()
+        //loadingPoints()
         
         let hideKeyBoardGesture = UITapGestureRecognizer(target: self,action: #selector(hideKeyboard))
         scrollView.addGestureRecognizer(hideKeyBoardGesture)
+        
         //runAnimate()
     }
     
@@ -61,6 +62,10 @@ class LoginController: UIViewController {
         return checkResult
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination.transitioningDelegate = self
+    }
+    
     func checkUserData() -> Bool {
         guard let login = nameInput.text,
             let password = passwordInput.text else {return false}
@@ -82,7 +87,7 @@ class LoginController: UIViewController {
     
     // MARK: - Actions
     @IBAction func loginButton(_ sender: Any) {
-        
+        loadingPoints()
     }
     
     @objc func hideKeyboard() {
@@ -142,5 +147,19 @@ extension LoginController {
         pointThree.layer.masksToBounds = true
         pointThree.layer.cornerRadius = 15
         pointThree.alpha = 0
+    }
+    func click(sender: UIButton) {
+        return loadingPoints()
+    }
+}
+
+extension LoginController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        MyDelay()
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        MyDelay()
     }
 }
